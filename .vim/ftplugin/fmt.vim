@@ -1,0 +1,1 @@
+/home/ckc/go/misc/vim/ftplugin/go/fmt.vim
