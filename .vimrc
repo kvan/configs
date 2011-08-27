@@ -21,16 +21,8 @@ end
 
 " statusline
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h%=%{fugitive#statusline()}\ \ %y\ \ Line:\ %l/%L:%c
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h%=%{fugitive#statusline()}\ \ %y\ \ Line:\ %l/%L:%c
 function! CurDir()
-    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+    let curdir = substitute(getcwd(), $HOME, "~", "g")
     return curdir
-endfunction
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    else
-        return ''
-    endif
 endfunction
