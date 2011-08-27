@@ -20,7 +20,8 @@ else
 end
 
 " statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ %{fugitive#statusline()}\ \ \ Line:\ %l/%L:%c
+set laststatus=2
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h%=%{fugitive#statusline()}\ \ %y\ \ Line:\ %l/%L:%c
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
     return curdir
