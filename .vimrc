@@ -1,7 +1,13 @@
+call pathogen#infect()
 set number
 set expandtab
-set t_Co=16
 syntax on
 filetype plugin on
 filetype indent on
-colorscheme desert
+if has("gui_running")
+        colorscheme freya
+elseif &t_Co == 256
+        colorscheme xoria256
+else
+        colorscheme desert
+end
